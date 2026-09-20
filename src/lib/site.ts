@@ -16,7 +16,6 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/pacificfloorsandcoatingsca/",
   },
   rating: "4.9",
-  placeId: "ChIJv0xWqnlg2KAR8iSja42tgRE",
 };
 
 export const sameAs = [
@@ -56,6 +55,23 @@ export const serviceAreas: ServiceArea[] = [
       "Campbell Heights",
       "Port Kells",
       "Fraser Heights",
+    ],
+  },
+  {
+    slug: "vancouver",
+    name: "Vancouver",
+    region: "Vancouver, BC",
+    blurb:
+      "Durable garage, commercial, and specialty floor coatings across Vancouver, installed with careful slab preparation and clean, dust-controlled equipment.",
+    neighbourhoods: [
+      "Downtown",
+      "Kitsilano",
+      "Mount Pleasant",
+      "Kerrisdale",
+      "East Vancouver",
+      "South Vancouver",
+      "Marpole",
+      "Hastings-Sunrise",
     ],
   },
   {
