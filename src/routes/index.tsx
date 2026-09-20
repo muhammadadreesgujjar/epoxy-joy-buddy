@@ -3,11 +3,9 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
 import { CtaBand } from "@/components/CtaBand";
-import { services, site } from "@/lib/site";
+import { serviceAreas, services, site } from "@/lib/site";
 import { serviceImage } from "@/lib/service-images";
-import { useSuspenseQuery } from "@tanstack/react-query";
 import { reviews } from "@/lib/reviews";
-import { googleReviewsQuery } from "@/lib/google-reviews.functions";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -63,7 +61,7 @@ const faqs = [
   },
   {
     q: "Do you install epoxy flooring outside Surrey, BC?",
-    a: "We serve Surrey, BC and Metro Vancouver, including Burnaby, Richmond, Coquitlam, Langley, Delta, White Rock, and Abbotsford.",
+    a: "We serve Surrey, BC and Metro Vancouver, including Vancouver, Burnaby, Richmond, Coquitlam, Langley, Delta, White Rock, and Abbotsford.",
   },
 ];
 
@@ -135,6 +133,7 @@ export const Route = createFileRoute("/")({
             "Delta",
             "White Rock",
             "Abbotsford",
+            "Vancouver",
             "Metro Vancouver",
           ].map((name) => ({ "@type": "City", name })),
           hasOfferCatalog: {
@@ -155,7 +154,6 @@ export const Route = createFileRoute("/")({
             "https://www.facebook.com/profile.php?id=61575485291064",
             "https://www.linkedin.com/in/pacificfloorsandcoatingsca/",
           ],
-          aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "30" },
         }),
       },
       {
@@ -172,7 +170,6 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
-  loader: ({ context }) => context.queryClient.ensureQueryData(googleReviewsQuery),
   errorComponent: ({ error }) => (
     <main className="mx-auto max-w-3xl px-4 py-24 text-center" role="alert">
       {error.message}
@@ -183,10 +180,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const { data } = useSuspenseQuery(googleReviewsQuery);
-  const list = data.reviews.length > 0 ? data.reviews : reviews.map((r) => ({ ...r, relativeTime: r.location }));
-  const firstReview = list[0];
-  const secondReview = list[1];
+  const firstReview = reviews[0];
+  const secondReview = reviews[1];
 
   if (!firstReview || !secondReview) return null;
 
@@ -329,7 +324,7 @@ function Home() {
             </Link>
           </div>
           <p className="mt-3 text-sm text-muted-foreground">
-            Rated {site.rating} on Google from customers across Surrey, BC and Metro Vancouver.
+            Customer feedback from projects across Surrey, BC and Metro Vancouver.
           </p>
           <div className="mt-8 grid items-center gap-10 md:grid-cols-[1fr_1fr] text-pretty">
             <img
@@ -402,8 +397,15 @@ function Home() {
                 </li>
               </ul>
               <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs font-bold uppercase tracking-wider text-primary">
-                {["Surrey", "Burnaby", "Coquitlam", "Richmond", "Delta", "Langley", "Abbotsford"].map((area) => (
-                  <span key={area}>{area}</span>
+                {serviceAreas.map((area) => (
+                  <Link
+                    key={area.slug}
+                    to="/service-areas/$slug"
+                    params={{ slug: area.slug }}
+                    className="transition-colors hover:text-foreground"
+                  >
+                    {area.name}
+                  </Link>
                 ))}
               </div>
             </div>

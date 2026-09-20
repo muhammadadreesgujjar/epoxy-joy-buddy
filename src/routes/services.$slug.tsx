@@ -134,7 +134,9 @@ function ServiceDetail() {
           <div className="mt-7 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <p className="eyebrow">{service.group}</p>
-              <h1 className="mt-3 text-4xl font-black leading-tight sm:text-[44px]">{service.title}</h1>
+              <h1 className="mt-3 text-4xl font-black leading-tight sm:text-[44px]">
+                {service.title} in Surrey BC
+              </h1>
               <p className="mt-5 leading-7 text-muted-foreground">{service.intro}</p>
               <ul className="mt-7 space-y-2.5 text-sm text-muted-foreground">
                 {service.bullets.map((b) => (
