@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: "Do you install epoxy flooring outside Surrey, BC?",
-    a: "We serve Surrey, BC and Metro Vancouver, including Burnaby, Richmond, Coquitlam, Langley, Delta, White Rock, and Abbotsford.",
+    a: "We serve Surrey, BC and Metro Vancouver, including Vancouver, Burnaby, Richmond, Coquitlam, Langley, Delta, White Rock, and Abbotsford.",
   },
 ];
 
@@ -154,7 +154,6 @@ export const Route = createFileRoute("/")({
             "https://www.facebook.com/profile.php?id=61575485291064",
             "https://www.linkedin.com/in/pacificfloorsandcoatingsca/",
           ],
-          aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "30" },
         }),
       },
       {

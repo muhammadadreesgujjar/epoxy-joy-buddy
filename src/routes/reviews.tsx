@@ -8,24 +8,24 @@ export const Route = createFileRoute("/reviews")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Epoxy Flooring Reviews Surrey | Pacific Floors & Coatings" },
+      { title: "Epoxy Flooring Customer Reviews | Pacific Floors & Coatings" },
       {
         name: "description",
         content:
-          "Read Google reviews from Surrey and Metro Vancouver homeowners and businesses who chose Pacific Floors & Coatings for durable epoxy flooring installations.",
+          "Read customer reviews from Surrey and Metro Vancouver homeowners and businesses who chose Pacific Floors & Coatings for durable epoxy flooring installations.",
       },
-      { property: "og:title", content: "Epoxy Flooring Reviews Surrey | Pacific Floors & Coatings" },
+      { property: "og:title", content: "Epoxy Flooring Customer Reviews | Pacific Floors & Coatings" },
       {
         property: "og:description",
-        content: "Read Google reviews from Surrey and Metro Vancouver homeowners and businesses who chose Pacific Floors & Coatings for durable epoxy flooring installations.",
+        content: "Read customer reviews from Surrey and Metro Vancouver homeowners and businesses who chose Pacific Floors & Coatings for durable epoxy flooring installations.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://epoxy-clone-pro.lovable.app/reviews" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Epoxy Flooring Reviews Surrey | Pacific Floors & Coatings" },
+      { name: "twitter:title", content: "Epoxy Flooring Customer Reviews | Pacific Floors & Coatings" },
       {
         name: "twitter:description",
-        content: "Read Google reviews from Surrey and Metro Vancouver homeowners and businesses who chose Pacific Floors & Coatings for durable epoxy flooring installations.",
+        content: "Read customer reviews from Surrey and Metro Vancouver homeowners and businesses who chose Pacific Floors & Coatings for durable epoxy flooring installations.",
       },
     ],
     links: [{ rel: "canonical", href: "https://epoxy-clone-pro.lovable.app/reviews" }],
